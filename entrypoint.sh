@@ -31,4 +31,4 @@ env >> /etc/environment
 echo "$CRON /etc/backup.sh" >> /etc/crontabs/root
 
 # Run cron
-exec "crond -l 2 -f"
+exec "/usr/sbin/crond -l 2 -f"
