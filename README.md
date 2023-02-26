@@ -21,8 +21,6 @@ docker run \
     -e ROUTER_HOST="192.168.1.1" \
     -e USER_NAME="admin" \
     -e PASSWORD="admin" \
-    -e NUMBER_OF_BACKUPS="10" \
-    -e CRON="0 1 * * *" \
     -v /path/to/local/backup/folder:/opt
     ghcr.io/denidoman/keenetic-backup:main
 ````
@@ -34,6 +32,7 @@ Environment variables list:
 | ROUTER_HOST       | \<required\> | Your Keenetic router IP address or a host name |
 | USER_NAME         | \<required\> | Router admin user name                         |
 | PASSWORD          | \<required\> | Router admin password                          |
+| SSH_PORT          | 22           | Router SSH port                                |
 | NUMBER_OF_BACKUPS | 30           | Number of backups stored in the folder         |
 | CRON              | @daily       | Cron rule                                      |
 

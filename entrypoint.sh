@@ -18,6 +18,9 @@ if [ -z "$PASSWORD" ]; then
   exit 1
 fi
 
+# Set default SSH port
+SSH_PORT="${SSH_PORT:-22}"
+
 # Set default backup numbers if the env variable is not set
 NUMBER_OF_BACKUPS="${NUMBER_OF_BACKUPS:-30}"
 
