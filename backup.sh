@@ -5,7 +5,7 @@ FULL_DATE=$(date +'%d-%m-%Y-T-%H-%M-%S')
 OUTPUT_PATH='/opt'
 
 # Do backup
-sshpass -p "${PASSWORD}" ssh "${USERNAME}@${ROUTER_HOST}" 'show running-config' > "${OUTPUT_PATH}/temp"
+sshpass -p "${PASSWORD}" ssh "${USER_NAME}@${ROUTER_HOST}" 'show running-config' > "${OUTPUT_PATH}/temp"
 
 if [ $? -eq 0 ]
 then
