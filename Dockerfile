@@ -1,11 +1,12 @@
-FROM alpine
+FROM alpine:latest
 
-RUN apk add --update --no-cache openssh sshpass curl
-RUN mkdir /root/.ssh/
-RUN echo "Host *" > /root/.ssh/config
-RUN echo "StrictHostKeyChecking no" >> /root/.ssh/config
-RUN chmod 400 root/.ssh/config
-COPY magic.sh /etc/
-RUN chmod +x /etc/magic.sh
-RUN echo '0 0 * * * /etc/magic.sh' >> /etc/crontabs/root
-CMD crond -l 2 -f
+COPY entrypoint.sh backup.sh /etc/
+
+RUN apk add --update --no-cache openssh sshpass && \
+    mkdir /root/.ssh/ && \
+    echo "Host *" > /root/.ssh/config && \
+    echo "StrictHostKeyChecking no" >> /root/.ssh/config && \
+    chmod 400 root/.ssh/config && \
+    chmod +x /etc/backup.sh /etc/entrypoint.sh
+
+ENTRYPOINT ["/etc/entrypoint.sh"]
