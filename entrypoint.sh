@@ -19,10 +19,12 @@ if [ -z "$PASSWORD" ]; then
 fi
 
 # Set default SSH port
-export SSH_PORT="${SSH_PORT:-22}"
+SSH_PORT="${SSH_PORT:-22}"
+export SSH_PORT
 
 # Set default backup numbers if the env variable is not set
-export NUMBER_OF_BACKUPS="${NUMBER_OF_BACKUPS:-30}"
+NUMBER_OF_BACKUPS="${NUMBER_OF_BACKUPS:-30}"
+export NUMBER_OF_BACKUPS
 
 # Set default backup frequency if the env variable is not set
 CRON="${CRON:-@daily}"
