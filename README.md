@@ -21,7 +21,7 @@ docker run \
     -e ROUTER_HOST="192.168.1.1" \
     -e USER_NAME="admin" \
     -e PASSWORD="admin" \
-    -v /path/to/local/backup/folder:/opt
+    -v /path/to/local/backup/folder:/opt \
     ghcr.io/denidoman/keenetic-backup:main
 ````
 
